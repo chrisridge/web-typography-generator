@@ -9,75 +9,105 @@
         <link rel="stylesheet" href="main.css">
         <style>
 
-
-
-            #previewBody {
-                margin: 0 auto;
-                width: 600px;
-                font-family: sans-serif;
+            .controls {
+                width: 200px;
                 position: fixed;
                 top: 0;
-                right: 100px;
+                left: 0;
                 background: #fff;
+            }
+
+            body {
+                margin: 0 auto;
+                width: 600px;
+                padding: 120px 0;
+                font-family: sans-serif;
             }
 
             label {
                 display: block;
             }
 
+            #previewBody {
+                font-size: 16px;
+                margin: 0 0 0 0;
+                line-height: 24px;
+                font-weight: 400;
+                color: #575757;
+            }
+
             #previewBody h1 {
                 font-size: 54px;
                 margin: 0 0 20px 0;
-                line-height: 64px;
+                line-height: 65px;
                 font-weight: 800;
-                color: #313d6b;
+                color: #3f50b1;
             }
 
             #previewBody h2 {
-                font-size: 34px;
+                font-size: 36px;
                 margin: 0 0 20px 0;
-                line-height: 44px;
-                font-weight: 800;
-                color: #313d6b;
+                line-height: 54px;
+                font-weight: 600;
+                color: #3f50b1;
             }
 
             #previewBody h3 {
-                font-size: 26px;
+                font-size: 28px;
                 margin: 0 0 20px 0;
-                line-height: 36px;
-                font-weight: 800;
-                color: #313d6b;
+                line-height: 42px;
+                font-weight: 600;
+                color: #3f50b1;
             }
 
             #previewBody h4 {
-                font-size: 16px;
+                font-size: 22px;
                 margin: 0 0 20px 0;
-                line-height: 26px;
-                font-weight: 800;
-                color: #313d6b;
+                line-height: 33px;
+                font-weight: 600;
+                color: #3f50b1;
             }
             #previewBody h5 {
-                font-size: 14px;
+                font-size: 16px;
                 margin: 0 0 20px 0;
                 line-height: 24px;
-                font-weight: 800;
-                color: #313d6b;
+                font-weight: 600;
+                color: #3f50b1;
             }
 
             #previewBody h6 {
-                font-size: 12px;
+                font-size: 14px;
                 margin: 0 0 20px 0;
-                line-height: 22px;
-                font-weight: 800;
-                color: #313d6b;
+                line-height: 21px;
+                font-weight: 600;
+                color: #3f50b1;
             }
 
+
+            /*
+
+            Version 1
+            - Body
+            - Paragraph
+            - Anchors
+            - H1 - H6
+            - H1
+            - H2
+            - H3
+            - H4
+            - H5
+            - H6
+
+            */
 
 
 
         </style>
     </head>
     <body>
+
+        <div class="controls">
+
 
         <h1>Typography Generator</h1>
 
@@ -140,7 +170,7 @@
             <input id="header-6-size" type="number" min="10" max="220" step="2" value ="14" onchange="updateStyle('changeSize', 'previewHeader6', this.value);"/>
 
 
-        <br><br><br><br><br>
+        </div>
 
 
 
@@ -158,6 +188,7 @@
 
     <h4 id="previewHeader4">Curabitur porttitor</h4>
     <p>Magna a metus bibendum pulvinar. Donec quam augue, rhoncus non sodales eget, dictum et urna. Mauris molestie maximus sapien sit amet varius.</p>
+    <p>Quisque pellentesque leo sed velit rhoncus, non pellentesque sem faucibus. Mauris consectetur non ante vel congue. Vivamus at mauris at leo tincidunt porta ut viverra nisl.</p>
 
     <h5 id="previewHeader5">Suspendisse consectetur interdum</h5>
     <p>Arcu at mollis. Suspendisse dolor ligula, luctus id mattis sit amet, tristique id felis. Etiam id tellus auctor, dapibus tortor eget, cursus tortor. Quisque malesuada fermentum ultrices. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
@@ -168,6 +199,12 @@
 </div>
 
 <script>
+
+    /*
+        1. changeStyle = the type of change being applied
+        2. changeID = the id of the preview element
+        3. changevalue = the value returned from the input field
+    */
 
     function updateStyle(changeStyle, changeID, changeValue) {
         if (changeStyle == 'changeSize') {
