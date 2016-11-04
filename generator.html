@@ -24,6 +24,57 @@
             label {
                 display: block;
             }
+
+            #previewBody h1 {
+                font-size: 54px;
+                margin: 0 0 20px 0;
+                line-height: 64px;
+                font-weight: 800;
+                color: #313d6b;
+            }
+
+            #previewBody h2 {
+                font-size: 34px;
+                margin: 0 0 20px 0;
+                line-height: 44px;
+                font-weight: 800;
+                color: #313d6b;
+            }
+
+            #previewBody h3 {
+                font-size: 26px;
+                margin: 0 0 20px 0;
+                line-height: 36px;
+                font-weight: 800;
+                color: #313d6b;
+            }
+
+            #previewBody h4 {
+                font-size: 16px;
+                margin: 0 0 20px 0;
+                line-height: 26px;
+                font-weight: 800;
+                color: #313d6b;
+            }
+            #previewBody h5 {
+                font-size: 14px;
+                margin: 0 0 20px 0;
+                line-height: 24px;
+                font-weight: 800;
+                color: #313d6b;
+            }
+
+            #previewBody h6 {
+                font-size: 12px;
+                margin: 0 0 20px 0;
+                line-height: 22px;
+                font-weight: 800;
+                color: #313d6b;
+            }
+
+
+
+
         </style>
     </head>
     <body>
@@ -42,13 +93,16 @@
         <input id="body-color-2" type="color" value="#000000" onchange="updateStyle('changeMultipleColors', ['previewHeader1', 'previewHeader2', 'previewHeader3', 'previewHeader4', 'previewHeader5', 'previewHeader6'], this.value);"/>
 
         <label for="body-line-height">Line height:</label>
-        <input id="body-line-height" type="number" min="10" max="220" step="2" value ="16" onchange="updateStyle('changeLineHeight', 'previewBody', this.value);"/>
+        <input id="body-line-height" type="number" step="1" value ="16" onchange="updateStyle('changeLineHeight', 'previewBody', this.value);"/>
 
         <label for="body-weight">Weight:</label>
         <input id="body-weight" type="number" min="100" max="900" step="100" value ="400" onchange="updateStyle('changeWeight', 'previewBody', this.value);"/>
 
         <label for="body-letter-spacing">letter spacing:</label>
-        <input id="body-letter-spacing" type="number" min="0" max="20" step="0.5" value ="0" onchange="updateStyle('changeLetterSpacing', 'previewBody', this.value);"/>
+        <input id="body-letter-spacing" type="number" step="0.5" value ="0" onchange="updateStyle('changeLetterSpacing', 'previewBody', this.value);"/>
+
+        <label for="body-margin-left">margin left:</label>
+        <input id="body-margin-left" type="number" step="10" value ="0" onchange="updateStyle('changeMargin', 'previewBody', this.value);"/>
 
         <hr>
 
@@ -115,30 +169,30 @@
 
 <script>
 
-    function updateStyle(changeType, changeIdentifier, changeValue) {
-        if (changeType == 'changeSize') {
+    function updateStyle(changeStyle, changeID, changeValue) {
+        if (changeStyle == 'changeSize') {
             // change the size
-            document.getElementById(changeIdentifier).style.fontSize = changeValue + 'px';
-        } else if (changeType == 'changeColor') {
+            document.getElementById(changeID).style.fontSize = changeValue + 'px';
+        } else if (changeStyle == 'changeColor') {
             // change the color
-            document.getElementById(changeIdentifier).style.color = changeValue;
-        } else if (changeType == 'changeLineHeight') {
+            document.getElementById(changeID).style.color = changeValue;
+        } else if (changeStyle == 'changeLineHeight') {
             // change the line height
-            document.getElementById(changeIdentifier).style.lineHeight = changeValue + 'px';
-        } else if (changeType == 'changeWeight') {
+            document.getElementById(changeID).style.lineHeight = changeValue + 'px';
+        } else if (changeStyle == 'changeWeight') {
             // change the weight
-            document.getElementById(changeIdentifier).style.fontWeight = changeValue;
-        } else if (changeType == 'changeMultipleColors') {
+            document.getElementById(changeID).style.fontWeight = changeValue;
+        } else if (changeStyle == 'changeMultipleColors') {
             // cycle through the list of identifiers and change the color of each
-            for (i = 0; i < changeIdentifier.length; i++) {
-                document.getElementById(changeIdentifier[i]).style.color = changeValue;
+            for (i = 0; i < changeID.length; i++) {
+                document.getElementById(changeID[i]).style.color = changeValue;
             }
-        } else if (changeType == 'changeMargin') {
+        } else if (changeStyle == 'changeMargin') {
             // change the margin
-            document.getElementById(changeIdentifier).style.margin = changeValue;
-        } else if (changeType == 'changeLetterSpacing') {
+            document.getElementById(changeID).style.margin = changeValue + 'px';
+        } else if (changeStyle == 'changeLetterSpacing') {
             // change the letter spacing
-            document.getElementById(changeIdentifier).style.letterSpacing = changeValue + 'px';
+            document.getElementById(changeID).style.letterSpacing = changeValue + 'px';
         }
     }
 
