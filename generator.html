@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <link rel="stylesheet" href="main.css">
+        <style>
+
+
+
+            #previewBody {
+                margin: 0 auto;
+                width: 600px;
+                font-family: sans-serif;
+                position: fixed;
+                top: 0;
+                right: 100px;
+                background: #fff;
+            }
+
+            label {
+                display: block;
+            }
+        </style>
+    </head>
+    <body>
+
+        <h1>Typography Generator</h1>
+
+        <h2>Body</h2>
+
+<!--
+Change types :
+
+1 = change size
+
+-->
+
+        <label for="body-size">Size:</label>
+        <input id="body-size" type="number" min="10" max="220" step="2" value ="16" onchange="updateStyle('changeSize', 'previewBody', this.value);"/>
+        <br>
+        <label for="body-color">Primary color:</label>
+        <input id="body-color" type="color" value="#000000" onchange="updateStyle('changeColor', 'previewBody', this.value);"/>
+        <br>
+        <label for="body-color-2">Secondary color:</label>
+        <input id="body-color-2" type="color" value="#000000" onchange="updateStyle('changeMultipleColors', ['previewHeader1', 'previewHeader2', 'previewHeader3', 'previewHeader4', 'previewHeader5', 'previewHeader6'], this.value);"/>
+        <br>
+        <label for="body-line-height">Line height:</label>
+        <input id="body-line-height" type="number" min="10" max="220" step="2" value ="16" onchange="updateStyle('changeLineHeight', 'previewBody', this.value);"/>
+        <br>
+        <label for="body-weight">weight:</label>
+        <input id="body-weight" type="number" min="100" max="900" step="100" value ="400" onchange="updateStyle('changeWeight', 'previewBody', this.value);"/>
+
+        <hr>
+
+        <h2>Header 1</h2>
+        <label for="header-1-size">Size:</label>
+        <input id="header-1-size" type="number" min="10" max="220" step="2" value ="42" onchange="updateStyle('changeSize', 'previewHeader1', this.value);"/>
+        <br>
+        <label for="header-1-color">Color:</label>
+        <input id="header-1-color" type="color" value="#000000" onchange="updateStyle('changeColor', 'previewHeader1', this.value);"/>
+        <br>
+        <label for="header-1-line-height">Line height:</label>
+        <input id="header-1-line-height" type="number" min="10" max="220" step="2" value ="16" onchange="updateStyle('changeLineHeight', 'previewHeader1', this.value);"/>
+        <br>
+        <label for="header-1-weight">weight:</label>
+        <input id="header-1-weight" type="number" min="100" max="900" step="100" value ="400" onchange="updateStyle('changeWeight', 'previewHeader1', this.value);"/>
+        <hr>
+
+        <label for="header-2-size">Header 2 size:</label>
+            <input id="header-2-size" type="number" min="10" max="220" step="2" value ="34" onchange="updateStyle('changeSize', 'previewHeader2', this.value);"/>
+        <hr>
+
+        <label for="header-3-size">Header 3 size:</label>
+            <input id="header-3-size" type="number" min="10" max="220" step="2" value ="22" onchange="updateStyle('changeSize', 'previewHeader3', this.value);"/>
+        <hr>
+
+        <label for="header-4-size">Header 4 size:</label>
+            <input id="header-4-size" type="number" min="10" max="220" step="2" value ="16" onchange="updateStyle('changeSize', 'previewHeader4', this.value);"/>
+        <hr>
+
+        <label for="header-5-size">Header 5 size:</label>
+            <input id="header-5-size" type="number" min="10" max="220" step="2" value ="16" onchange="updateStyle('changeSize', 'previewHeader5', this.value);"/>
+        <hr>
+
+        <label for="header-6-size">Header 6 size:</label>
+            <input id="header-6-size" type="number" min="10" max="220" step="2" value ="14" onchange="updateStyle('changeSize', 'previewHeader6', this.value);"/>
+
+
+        <br><br><br><br><br>
+
+
+
+
+        <h3>Preview</h3>
+        <div id="previewBody">
+
+
+
+<h1 id="previewHeader1">Lorem ipsum dolor sit amet</h1>
+<p>consectetur adipiscing elit. Donec pharetra varius urna, nec egestas tellus dictum eu. Sed at blandit sapien. Quisque hendrerit placerat iaculis. Integer aliquet dictum ante. Pellentesque fringilla elementum iaculis. Vestibulum sit amet felis ut dui suscipit blandit a vel lorem. </p>
+
+<h2 id="previewHeader2">Phasellus scelerisque</h2>
+<p>Proin rutrum magna quis diam volutpat, a ullamcorper nibh consectetur. Vestibulum vitae neque vitae erat dapibus ultrices. Nulla sit amet massa eros.</p>
+
+<h3 id="previewHeader3">Nulla iaculis nulla nec</h3>
+<p>Peros cursus fermentum. In tempus sapien ut libero rutrum efficitur. Mauris eleifend aliquam tortor vel rutrum. Aenean tincidunt, mi ut vestibulum porta, nisl nisi condimentum eros, id mollis enim metus tincidunt libero. Nulla facilisi. Etiam vestibulum malesuada massa a consequat.</p>
+
+<h4 id="previewHeader4">Curabitur porttitor</h4>
+<p>Magna a metus bibendum pulvinar. Donec quam augue, rhoncus non sodales eget, dictum et urna. Mauris molestie maximus sapien sit amet varius.</p>
+
+<h5 id="previewHeader5">Suspendisse consectetur interdum</h5>
+<p>Arcu at mollis. Suspendisse dolor ligula, luctus id mattis sit amet, tristique id felis. Etiam id tellus auctor, dapibus tortor eget, cursus tortor. Quisque malesuada fermentum ultrices. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+
+<h6 id="previewHeader6">Maecenas viverra</h6>
+<p>Bibendum dolor, id vestibulum libero. Donec interdum, magna nec aliquam iaculis, nisl neque tincidunt felis, quis dapibus sapien urna et est. Nam blandit enim sit amet tincidunt dignissim. Aliquam maximus finibus elit sed interdum. Nulla eu porta sapien.</p>
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+
+ 
+<script> 
+
+
+function updateStyle(changeType, changeIdentifier, changeValue) {
+    if ( changeType == 'changeSize' ) {
+        // change the size
+        document.getElementById(changeIdentifier).style.fontSize = changeValue + 'px';
+    } else if ( changeType == 'changeColor' ) {
+        // change the color
+        document.getElementById(changeIdentifier).style.color = changeValue;
+    } else if ( changeType == 'changeLineHeight' ) {
+        // change the line height
+        document.getElementById(changeIdentifier).style.lineHeight = changeValue + 'px';
+    } else if ( changeType == 'changeWeight' ) {
+        // change the weight
+        document.getElementById(changeIdentifier).style.fontWeight = changeValue;
+    } else if ( changeType == 'changeMultipleColors' ) {
+        // cycle through the list and change the color of each indentifier
+        for (i = 0; i < changeIdentifier.length; i++) {
+            document.getElementById(changeIdentifier[i]).style.color = changeValue;
+        }
+    }
+}
+
+
+        </script>
+
+    </body>
+</html>
