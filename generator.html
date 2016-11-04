@@ -28,7 +28,7 @@
                 display: block;
             }
 
-            #previewBody {
+            .previewBody {
                 font-size: 16px;
                 margin: 0 0 0 0;
                 line-height: 24px;
@@ -36,7 +36,7 @@
                 color: #575757;
             }
 
-            #previewBody h1 {
+            .previewBody h1 {
                 font-size: 54px;
                 margin: 0 0 20px 0;
                 line-height: 65px;
@@ -44,7 +44,7 @@
                 color: #3f50b1;
             }
 
-            #previewBody h2 {
+            .previewBody h2 {
                 font-size: 36px;
                 margin: 0 0 20px 0;
                 line-height: 54px;
@@ -52,7 +52,7 @@
                 color: #3f50b1;
             }
 
-            #previewBody h3 {
+            .previewBody h3 {
                 font-size: 28px;
                 margin: 0 0 20px 0;
                 line-height: 42px;
@@ -60,14 +60,14 @@
                 color: #3f50b1;
             }
 
-            #previewBody h4 {
+            .previewBody h4 {
                 font-size: 22px;
                 margin: 0 0 20px 0;
                 line-height: 33px;
                 font-weight: 600;
                 color: #3f50b1;
             }
-            #previewBody h5 {
+            .previewBody h5 {
                 font-size: 16px;
                 margin: 0 0 20px 0;
                 line-height: 24px;
@@ -75,7 +75,7 @@
                 color: #3f50b1;
             }
 
-            #previewBody h6 {
+            .previewBody h6 {
                 font-size: 14px;
                 margin: 0 0 20px 0;
                 line-height: 21px;
@@ -121,7 +121,7 @@ body {
 &nbsp; margin: 0 0 0 0;
 &nbsp; line-height: 24px;
 &nbsp; font-weight: 400;
-&nbsp; color: #575757;
+&nbsp; color: <span class="">#575757</span>;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -145,22 +145,22 @@ h1, h2, h3, h4, h5, h6 {
         <input id="body-size" type="number" min="10" max="220" step="2" value ="16" onchange="classSearch('changeSize', 'previewBody', this.value);"/>
 
         <label for="body-color">Primary color:</label>
-        <input id="body-color" type="color" value="#000000" onchange="updateStyle('changeColor', 'previewBody', this.value);"/>
+        <input id="body-color" type="color" value="#000000" onchange="classSearch('changeColor', 'previewBody', this.value);"/>
 
         <label for="body-color-2">Secondary color:</label>
-        <input id="body-color-2" type="color" value="#000000" onchange="updateStyle('changeMultipleColors', ['previewHeader1', 'previewHeader2', 'previewHeader3', 'previewHeader4', 'previewHeader5', 'previewHeader6'], this.value);"/>
+        <input id="body-color-2" type="color" value="#000000" onchange="classSearch('changeMultipleColors', ['previewHeader1', 'previewHeader2', 'previewHeader3', 'previewHeader4', 'previewHeader5', 'previewHeader6'], this.value);"/>
 
         <label for="body-line-height">Line height:</label>
-        <input id="body-line-height" type="number" step="1" value ="16" onchange="updateStyle('changeLineHeight', 'previewBody', this.value);"/>
+        <input id="body-line-height" type="number" step="1" value ="16" onchange="classSearch('changeLineHeight', 'previewBody', this.value);"/>
 
         <label for="body-weight">Weight:</label>
-        <input id="body-weight" type="number" min="100" max="900" step="100" value ="400" onchange="updateStyle('changeWeight', 'previewBody', this.value);"/>
+        <input id="body-weight" type="number" min="100" max="900" step="100" value ="400" onchange="classSearch('changeWeight', 'previewBody', this.value);"/>
 
         <label for="body-letter-spacing">letter spacing:</label>
-        <input id="body-letter-spacing" type="number" step="0.5" value ="0" onchange="updateStyle('changeLetterSpacing', 'previewBody', this.value);"/>
+        <input id="body-letter-spacing" type="number" step="0.5" value ="0" onchange="classSearch('changeLetterSpacing', 'previewBody', this.value);"/>
 
         <label for="body-margin-left">margin left:</label>
-        <input id="body-margin-left" type="number" step="10" value ="0" onchange="updateStyle('changeMargin', 'previewBody', this.value);"/>
+        <input id="body-margin-left" type="number" step="10" value ="0" onchange="classSearch('changeMargin', 'previewBody', this.value);"/>
 
         <hr>
 
@@ -205,47 +205,73 @@ h1, h2, h3, h4, h5, h6 {
 
 <div class="previewBody">
 
-    <h1 id="previewHeader1">Lorem ipsum dolor sit amet</h1>
+    <h1 class="previewHeader1">Lorem ipsum dolor sit amet</h1>
     <p>consectetur adipiscing elit. Donec pharetra varius urna, nec egestas tellus dictum eu. Sed at blandit sapien. Quisque hendrerit placerat iaculis. Integer aliquet dictum ante. Pellentesque fringilla elementum iaculis. Vestibulum sit amet felis ut dui suscipit blandit a vel lorem. </p>
 
-    <h2 id="previewHeader2">Phasellus scelerisque</h2>
+    <h2 class="previewHeader2">Phasellus scelerisque</h2>
     <p>Proin rutrum magna quis diam volutpat, a ullamcorper nibh consectetur. Vestibulum vitae neque vitae erat dapibus ultrices. Nulla sit amet massa eros.</p>
 
-    <h3 id="previewHeader3">Nulla iaculis nulla nec</h3>
-    <h4 id="previewHeader4">Malesuada fames ac</h4>
+    <h3 class="previewHeader3">Nulla iaculis nulla nec</h3>
+    <h4 class="previewHeader4">Malesuada fames ac</h4>
     <p>Peros cursus fermentum. In tempus sapien ut libero rutrum efficitur. Mauris eleifend aliquam tortor vel rutrum. Aenean tincidunt, mi ut vestibulum porta, nisl nisi condimentum eros, id mollis enim metus tincidunt libero. Nulla facilisi. Etiam vestibulum malesuada massa a consequat.</p>
 
-    <h4 id="previewHeader4">Curabitur porttitor</h4>
+    <h4 class="previewHeader4">Curabitur porttitor</h4>
     <p>Magna a metus bibendum pulvinar. Donec quam augue, rhoncus non sodales eget, dictum et urna. Mauris molestie maximus sapien sit amet varius.</p>
     <p>Quisque pellentesque leo sed velit rhoncus, non pellentesque sem faucibus. Mauris consectetur non ante vel congue. Vivamus at mauris at leo tincidunt porta ut viverra nisl.</p>
 
-    <h5 id="previewHeader5">Suspendisse consectetur interdum</h5>
+    <h5 class="previewHeader5">Suspendisse consectetur interdum</h5>
     <p>Arcu at mollis. Suspendisse dolor ligula, luctus id mattis sit amet, tristique id felis. Etiam id tellus auctor, dapibus tortor eget, cursus tortor. Quisque malesuada fermentum ultrices. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
 
-    <h6 id="previewHeader6">Maecenas viverra</h6>
+    <h6 class="previewHeader6">Maecenas viverra</h6>
     <p>Bibendum dolor, id vestibulum libero. Donec interdum, magna nec aliquam iaculis, nisl neque tincidunt felis, quis dapibus sapien urna et est. Nam blandit enim sit amet tincidunt dignissim. Aliquam maximus finibus elit sed interdum. Nulla eu porta sapien.</p>
 
 </div>
 
 <script>
 
-function classSearch(changeStyle, changeClass, changeValue){
+function classSearch(changeStyle, changeClass, changeValue) {
 
     items = document.getElementsByClassName(changeClass);
 
     for (var i = 0; i < items.length; i++) {
 
         if (changeStyle == 'changeSize') {
-
-            // check if item is a span
             if (items[i].tagName == 'SPAN') {
-                // if this is a span replace innerhtml
                 items[i].innerHTML = changeValue + 'px';
             } else {
-                // else change the style
                 items[i].style.fontSize = changeValue + 'px';
             }
+        } else if (changeStyle == 'changeColor') {
+            if (items[i].tagName == 'SPAN') {
+                items[i].innerHTML = changeValue;
+            } else {
+                items[i].style.color = changeValue;
+            }
 
+        } else if (changeStyle == 'changeLineHeight') {
+            if (items[i].tagName == 'SPAN') {
+                items[i].innerHTML = changeValue + 'px';
+            } else {
+                items[i].style.lineHeight = changeValue + 'px';
+            }
+        } else if (changeStyle == 'changeWeight') {
+            if (items[i].tagName == 'SPAN') {
+                items[i].innerHTML = changeValue;
+            } else {
+                items[i].style.fontWeight = changeValue;
+            }
+        }else if (changeStyle == 'changeMargin') {
+            if (items[i].tagName == 'SPAN') {
+                items[i].innerHTML = changeValue + 'px';
+            } else {
+                items[i].style.margin = changeValue + 'px';
+            }
+        } else if (changeStyle == 'changeLetterSpacing') {
+            if (items[i].tagName == 'SPAN') {
+                items[i].innerHTML = changeValue + 'px';
+            } else {
+                items[i].style.letterSpacing = changeValue + 'px';
+            }
         }
 
     }
@@ -259,31 +285,10 @@ function classSearch(changeStyle, changeClass, changeValue){
     */
 
     function updateStyle(changeStyle, changeID, changeValue) {
-        if (changeStyle == 'changeSize') {
-            // change the size
-
-            classSearch(changeID, changeValue);
-
-        } else if (changeStyle == 'changeColor') {
-            // change the color
-            document.getElementById(changeID).style.color = changeValue;
-        } else if (changeStyle == 'changeLineHeight') {
-            // change the line height
-            document.getElementById(changeID).style.lineHeight = changeValue + 'px';
-        } else if (changeStyle == 'changeWeight') {
-            // change the weight
-            document.getElementById(changeID).style.fontWeight = changeValue;
-        } else if (changeStyle == 'changeMultipleColors') {
-            // cycle through the list of identifiers and change the color of each
+        if (changeStyle == 'changeMultipleColors') {
             for (i = 0; i < changeID.length; i++) {
                 document.getElementById(changeID[i]).style.color = changeValue;
             }
-        } else if (changeStyle == 'changeMargin') {
-            // change the margin
-            document.getElementById(changeID).style.margin = changeValue + 'px';
-        } else if (changeStyle == 'changeLetterSpacing') {
-            // change the letter spacing
-            document.getElementById(changeID).style.letterSpacing = changeValue + 'px';
         }
     }
 
