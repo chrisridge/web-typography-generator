@@ -101,10 +101,38 @@
             */
 
 
+            pre {
+                width: 300px;
+                background: #000;
+                color: #fff;
+                position: fixed;
+                top: 0;
+                right: 0;
+                padding: 30px;
+            }
 
         </style>
     </head>
     <body>
+
+        <pre id="output">
+body {
+&nbsp; font-size: <span class="previewBody">16px</span>;
+&nbsp; margin: 0 0 0 0;
+&nbsp; line-height: 24px;
+&nbsp; font-weight: 400;
+&nbsp; color: #575757;
+}
+
+h1, h2, h3, h4, h5, h6 {
+&nbsp; font-size: 16px;
+&nbsp; margin: 0 0 0 0;
+&nbsp; line-height: 24px;
+&nbsp; font-weight: 400;
+&nbsp; color: #575757;
+}
+
+        </pre>
 
         <div class="controls">
 
@@ -114,7 +142,7 @@
         <h2>Body</h2>
 
         <label for="body-size">Size:</label>
-        <input id="body-size" type="number" min="10" max="220" step="2" value ="16" onchange="updateStyle('changeSize', 'previewBody', this.value);"/>
+        <input id="body-size" type="number" min="10" max="220" step="2" value ="16" onchange="classSearch('changeSize', 'previewBody', this.value);"/>
 
         <label for="body-color">Primary color:</label>
         <input id="body-color" type="color" value="#000000" onchange="updateStyle('changeColor', 'previewBody', this.value);"/>
@@ -175,7 +203,7 @@
 
 
 
-<div id="previewBody">
+<div class="previewBody">
 
     <h1 id="previewHeader1">Lorem ipsum dolor sit amet</h1>
     <p>consectetur adipiscing elit. Donec pharetra varius urna, nec egestas tellus dictum eu. Sed at blandit sapien. Quisque hendrerit placerat iaculis. Integer aliquet dictum ante. Pellentesque fringilla elementum iaculis. Vestibulum sit amet felis ut dui suscipit blandit a vel lorem. </p>
@@ -184,6 +212,7 @@
     <p>Proin rutrum magna quis diam volutpat, a ullamcorper nibh consectetur. Vestibulum vitae neque vitae erat dapibus ultrices. Nulla sit amet massa eros.</p>
 
     <h3 id="previewHeader3">Nulla iaculis nulla nec</h3>
+    <h4 id="previewHeader4">Malesuada fames ac</h4>
     <p>Peros cursus fermentum. In tempus sapien ut libero rutrum efficitur. Mauris eleifend aliquam tortor vel rutrum. Aenean tincidunt, mi ut vestibulum porta, nisl nisi condimentum eros, id mollis enim metus tincidunt libero. Nulla facilisi. Etiam vestibulum malesuada massa a consequat.</p>
 
     <h4 id="previewHeader4">Curabitur porttitor</h4>
@@ -200,6 +229,29 @@
 
 <script>
 
+function classSearch(changeStyle, changeClass, changeValue){
+
+    items = document.getElementsByClassName(changeClass);
+
+    for (var i = 0; i < items.length; i++) {
+
+        if (changeStyle == 'changeSize') {
+
+            // check if item is a span
+            if (items[i].tagName == 'SPAN') {
+                // if this is a span replace innerhtml
+                items[i].innerHTML = changeValue + 'px';
+            } else {
+                // else change the style
+                items[i].style.fontSize = changeValue + 'px';
+            }
+
+        }
+
+    }
+
+}
+
     /*
         1. changeStyle = the type of change being applied
         2. changeID = the ID of the preview element
@@ -209,7 +261,9 @@
     function updateStyle(changeStyle, changeID, changeValue) {
         if (changeStyle == 'changeSize') {
             // change the size
-            document.getElementById(changeID).style.fontSize = changeValue + 'px';
+
+            classSearch(changeID, changeValue);
+
         } else if (changeStyle == 'changeColor') {
             // change the color
             document.getElementById(changeID).style.color = changeValue;
