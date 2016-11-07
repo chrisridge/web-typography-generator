@@ -109,6 +109,15 @@
                 top: 0;
                 right: 0;
                 padding: 30px;
+                font-size: 14px;
+                font-family: monospace;
+            }
+
+            pre .previewBody {
+                color: inherit;
+                font-size: inherit ;
+                font-family: inherit;
+                line-height: inherit;
             }
 
         </style>
@@ -118,7 +127,6 @@
         <pre id="output">
 body {
 &nbsp; font-size: <span class="previewBody">16px</span>;
-&nbsp; margin: 0 0 0 0;
 &nbsp; line-height: 24px;
 &nbsp; font-weight: 400;
 &nbsp; color: <span class="">#575757</span>;
@@ -236,48 +244,60 @@ h1 {
 <script>
 
 function classSearch(changeStyle, changeClass, changeValue) {
-    items = document.getElementsByClassName(changeClass);
+
+    var items = document.getElementsByClassName(changeClass),
+        outputContainer = document.getElementById('output');
+
     for (var i = 0; i < items.length; i++) {
-        /*
-            When a style is updated it should be applied unless the tag is span.
-            If it is a span it should replace the content using innerhtml
-        */
+
         if (changeStyle == 'changeSize') {
-            if (items[i].tagName == 'SPAN') {
+
+            if (items[i].parentNode == outputContainer) {
                 items[i].innerHTML = changeValue + 'px';
             } else {
                 items[i].style.fontSize = changeValue + 'px';
             }
+
         } else if (changeStyle == 'changeColor') {
-            if (items[i].tagName == 'SPAN') {
+
+            if (items[i].parentNode == outputContainer) {
                 items[i].innerHTML = changeValue;
             } else {
                 items[i].style.color = changeValue;
             }
+
         } else if (changeStyle == 'changeLineHeight') {
-            if (items[i].tagName == 'SPAN') {
+
+            if (items[i].parentNode == outputContainer) {
                 items[i].innerHTML = changeValue + 'px';
             } else {
                 items[i].style.lineHeight = changeValue + 'px';
             }
+
         } else if (changeStyle == 'changeWeight') {
-            if (items[i].tagName == 'SPAN') {
+
+            if (items[i].parentNode == outputContainer) {
                 items[i].innerHTML = changeValue;
             } else {
                 items[i].style.fontWeight = changeValue;
             }
-        }else if (changeStyle == 'changeMargin') {
-            if (items[i].tagName == 'SPAN') {
+
+        } else if (changeStyle == 'changeMargin') {
+
+            if (items[i].parentNode == outputContainer) {
                 items[i].innerHTML = changeValue + 'px';
             } else {
                 items[i].style.margin = changeValue + 'px';
             }
+
         } else if (changeStyle == 'changeLetterSpacing') {
-            if (items[i].tagName == 'SPAN') {
+
+            if (items[i].parentNode == outputContainer) {
                 items[i].innerHTML = changeValue + 'px';
             } else {
                 items[i].style.letterSpacing = changeValue + 'px';
             }
+
         }
     }
 }
