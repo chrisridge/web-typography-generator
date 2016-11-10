@@ -28,60 +28,6 @@
                 display: block;
             }
 
-            .previewBody {
-                font-size: 16px;
-                margin: 0 0 0 0;
-                line-height: 24px;
-                font-weight: 400;
-                color: #575757;
-            }
-
-            .previewBody h1 {
-                font-size: 54px;
-                margin: 0 0 20px 0;
-                line-height: 65px;
-                font-weight: 800;
-                color: #3f50b1;
-            }
-
-            .previewBody h2 {
-                font-size: 36px;
-                margin: 0 0 20px 0;
-                line-height: 54px;
-                font-weight: 600;
-                color: #3f50b1;
-            }
-
-            .previewBody h3 {
-                font-size: 28px;
-                margin: 0 0 20px 0;
-                line-height: 42px;
-                font-weight: 600;
-                color: #3f50b1;
-            }
-
-            .previewBody h4 {
-                font-size: 22px;
-                margin: 0 0 20px 0;
-                line-height: 33px;
-                font-weight: 600;
-                color: #3f50b1;
-            }
-            .previewBody h5 {
-                font-size: 16px;
-                margin: 0 0 20px 0;
-                line-height: 24px;
-                font-weight: 600;
-                color: #3f50b1;
-            }
-
-            .previewBody h6 {
-                font-size: 14px;
-                margin: 0 0 20px 0;
-                line-height: 21px;
-                font-weight: 600;
-                color: #3f50b1;
-            }
 
 
             /*
@@ -115,6 +61,84 @@
                 font-size: 14px;
                 font-family: monospace;
             }
+
+
+
+
+
+
+body {
+    font-size: 16px;
+    line-height: 1.6em;
+    font-weight: 400;
+    color: #575757;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0 0 0.5em 0;
+    font-weight: 600;
+    color: #283896;
+    line-height: 1em;
+}
+
+h1 {
+    font-size: 48px;
+    font-weight: 800;
+    color: #283896;
+}
+
+h2 {
+    font-size: 34px;
+}
+
+h3 {
+    font-size: 28px;
+}
+
+h4 {
+    font-size: 22px;
+}
+
+h5 {
+    font-size: 16px;
+}
+
+h6 {
+    font-size: 16px;
+}
+
+p + h1, p + h2, p + h3, p + h4, p + h5, p + h6 {
+    margin-top: 40px;
+}
+
+            h2 + h3 {
+
+            }
+
+            h3 + h4 {
+
+            }
+
+            h4 + h5 {}
+
+            h5 + h6 {
+
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         </style>
     </head>
@@ -162,7 +186,7 @@ h1 {
         <h2>Body</h2>
 
         <label for="body-size">Size:</label>
-        <input id="body-size" type="number" min="10" max="220" step="2" value ="16" onchange="styleUpdate('changeSize', ['h1'], this.value);"/>
+        <input id="body-size" type="number" min="10" max="220" step="2" value ="16" onchange="styleUpdate('changeSize', 'previewBody', this.value);"/>
 
         <label for="body-color">Primary color:</label>
         <input id="body-color" type="color" value="#000000" onchange="styleUpdate('changeColor', 'previewBody', this.value);"/>
@@ -185,7 +209,7 @@ h1 {
 
 
         <label for="h1-size">h2:</label>
-        <input id="h1-size" type="number" min="10" max="220" step="2" value ="16" onchange="styleUpdate('changeSize', 'h2', this.value);"/>
+        <input id="h1-size" type="number" min="10" max="220" step="2" value ="16" onchange="styleUpdate('changeSize', ['h2'], this.value);"/>
 
 
 
