@@ -124,19 +124,30 @@
     </head>
     <body>
 
-        <pre id="output">
+        <div id="output">
+            <pre class="bodyOutput">
 body {
-&nbsp; font-size: <span class="previewBody">16px</span>;
+&nbsp; font-size: 16px;
 &nbsp; line-height: 24px;
 &nbsp; font-weight: 400;
-&nbsp; color: <span class="">#575757</span>;
+&nbsp; color: #575757;
 }
+
+
+            </pre>
+
+            <pre class="headerOutput">
+
 
 h1, h2, h3, h4, h5, h6 {
 &nbsp; margin: 0 0 0 0;
 &nbsp; font-weight: 400;
 &nbsp; color: #575757;
 }
+
+            </pre>
+
+            <pre class="h1Output">
 
 h1 {
 &nbsp; font-size: 54px;
@@ -146,7 +157,13 @@ h1 {
 &nbsp; color: #3f50b1;
 }
 
-        </pre>
+            </pre>
+
+
+
+
+
+        </div>
 
         <div class="controls">
 
@@ -156,13 +173,13 @@ h1 {
         <h2>Body</h2>
 
         <label for="body-size">Size:</label>
-        <input id="body-size" type="number" min="10" max="220" step="2" value ="16" onchange="classSearch('changeSize', 'previewBody', this.value);"/>
+        <input id="body-size" type="number" min="10" max="220" step="2" value ="16" onchange="classSearch('changeSize', ['h1'], this.value);"/>
 
         <label for="body-color">Primary color:</label>
         <input id="body-color" type="color" value="#000000" onchange="classSearch('changeColor', 'previewBody', this.value);"/>
 
         <label for="body-color-2">Secondary color:</label>
-        <input id="body-color-2" type="color" value="#000000" onchange="classSearch('changeMultipleColors', ['previewHeader1', 'previewHeader2', 'previewHeader3', 'previewHeader4', 'previewHeader5', 'previewHeader6'], this.value);"/>
+        <input id="body-color-2" type="color" value="#000000" onchange="classSearch('changeColor', ['h1', 'h2', 'h3', 'h4', 'h6'], this.value);"/>
 
         <label for="body-line-height">Line height:</label>
         <input id="body-line-height" type="number" step="1" value ="16" onchange="classSearch('changeLineHeight', 'previewBody', this.value);"/>
@@ -176,40 +193,12 @@ h1 {
         <label for="body-margin-left">margin left:</label>
         <input id="body-margin-left" type="number" step="10" value ="0" onchange="classSearch('changeMargin', 'previewBody', this.value);"/>
 
-        <hr>
 
-        <h2>Header 1</h2>
-        <label for="header-1-size">Size:</label>
-        <input id="header-1-size" type="number" min="10" max="220" step="2" value ="42" onchange="updateStyle('changeSize', 'previewHeader1', this.value);"/>
-        <br>
-        <label for="header-1-color">Color:</label>
-        <input id="header-1-color" type="color" value="#000000" onchange="updateStyle('changeColor', 'previewHeader1', this.value);"/>
-        <br>
-        <label for="header-1-line-height">Line height:</label>
-        <input id="header-1-line-height" type="number" min="10" max="220" step="2" value ="16" onchange="updateStyle('changeLineHeight', 'previewHeader1', this.value);"/>
-        <br>
-        <label for="header-1-weight">weight:</label>
-        <input id="header-1-weight" type="number" min="100" max="900" step="100" value ="400" onchange="updateStyle('changeWeight', 'previewHeader1', this.value);"/>
-        <hr>
 
-        <label for="header-2-size">Header 2 size:</label>
-            <input id="header-2-size" type="number" min="10" max="220" step="2" value ="34" onchange="updateStyle('changeSize', 'previewHeader2', this.value);"/>
-        <hr>
+        <label for="h1-size">h2:</label>
+        <input id="h1-size" type="number" min="10" max="220" step="2" value ="16" onchange="classSearch('changeSize', 'h2', this.value);"/>
 
-        <label for="header-3-size">Header 3 size:</label>
-            <input id="header-3-size" type="number" min="10" max="220" step="2" value ="22" onchange="updateStyle('changeSize', 'previewHeader3', this.value);"/>
-        <hr>
 
-        <label for="header-4-size">Header 4 size:</label>
-            <input id="header-4-size" type="number" min="10" max="220" step="2" value ="16" onchange="updateStyle('changeSize', 'previewHeader4', this.value);"/>
-        <hr>
-
-        <label for="header-5-size">Header 5 size:</label>
-            <input id="header-5-size" type="number" min="10" max="220" step="2" value ="16" onchange="updateStyle('changeSize', 'previewHeader5', this.value);"/>
-        <hr>
-
-        <label for="header-6-size">Header 6 size:</label>
-            <input id="header-6-size" type="number" min="10" max="220" step="2" value ="14" onchange="updateStyle('changeSize', 'previewHeader6', this.value);"/>
 
 
         </div>
@@ -219,102 +208,105 @@ h1 {
 
 <div class="previewBody">
 
-    <h1 class="previewHeader1">Lorem ipsum dolor sit amet</h1>
+    <h1>Lorem ipsum dolor sit amet</h1>
     <p>consectetur adipiscing elit. Donec pharetra varius urna, nec egestas tellus dictum eu. Sed at blandit sapien. Quisque hendrerit placerat iaculis. Integer aliquet dictum ante. Pellentesque fringilla elementum iaculis. Vestibulum sit amet felis ut dui suscipit blandit a vel lorem. </p>
 
-    <h2 class="previewHeader2">Phasellus scelerisque</h2>
+    <h2>Phasellus scelerisque</h2>
     <p>Proin rutrum magna quis diam volutpat, a ullamcorper nibh consectetur. Vestibulum vitae neque vitae erat dapibus ultrices. Nulla sit amet massa eros.</p>
 
-    <h3 class="previewHeader3">Nulla iaculis nulla nec</h3>
-    <h4 class="previewHeader4">Malesuada fames ac</h4>
+    <h3>Nulla iaculis nulla nec</h3>
+    <h4>Malesuada fames ac</h4>
     <p>Peros cursus fermentum. In tempus sapien ut libero rutrum efficitur. Mauris eleifend aliquam tortor vel rutrum. Aenean tincidunt, mi ut vestibulum porta, nisl nisi condimentum eros, id mollis enim metus tincidunt libero. Nulla facilisi. Etiam vestibulum malesuada massa a consequat.</p>
 
-    <h4 class="previewHeader4">Curabitur porttitor</h4>
+    <h4>Curabitur porttitor</h4>
     <p>Magna a metus bibendum pulvinar. Donec quam augue, rhoncus non sodales eget, dictum et urna. Mauris molestie maximus sapien sit amet varius.</p>
     <p>Quisque pellentesque leo sed velit rhoncus, non pellentesque sem faucibus. Mauris consectetur non ante vel congue. Vivamus at mauris at leo tincidunt porta ut viverra nisl.</p>
 
-    <h5 class="previewHeader5">Suspendisse consectetur interdum</h5>
+    <h5>Suspendisse consectetur interdum</h5>
     <p>Arcu at mollis. Suspendisse dolor ligula, luctus id mattis sit amet, tristique id felis. Etiam id tellus auctor, dapibus tortor eget, cursus tortor. Quisque malesuada fermentum ultrices. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
 
-    <h6 class="previewHeader6">Maecenas viverra</h6>
+    <h6>Maecenas viverra</h6>
     <p>Bibendum dolor, id vestibulum libero. Donec interdum, magna nec aliquam iaculis, nisl neque tincidunt felis, quis dapibus sapien urna et est. Nam blandit enim sit amet tincidunt dignissim. Aliquam maximus finibus elit sed interdum. Nulla eu porta sapien.</p>
 
 </div>
+
 
 <script>
 
 function classSearch(changeStyle, changeClass, changeValue) {
 
-    var items = document.getElementsByClassName(changeClass),
-        outputContainer = document.getElementById('output');
+    var previewClass = 'previewBody',
+        outputClass = 'output',
+        items = document.getElementsByClassName(changeClass);
 
-    for (var i = 0; i < items.length; i++) {
+    function updatedClass(changeItem, changeType){
 
-        if (changeStyle == 'changeSize') {
+        // update the innerhtml if the element is found within the output container
+        if (changeItem.parentNode.className == outputClass) {
 
-            if (items[i].parentNode == outputContainer) {
-                items[i].innerHTML = changeValue + 'px';
-            } else {
-                items[i].style.fontSize = changeValue + 'px';
+            // do stuff to change the output
+
+        // update the style if it's found within the preview container or if it is the preview container
+        } else if (changeItem.parentNode.className == previewClass || changeItem.className == previewClass) {
+
+            if (changeType == 'changeColor') {
+                changeItem.style.color = changeValue;
             }
 
-        } else if (changeStyle == 'changeColor') {
-
-            if (items[i].parentNode == outputContainer) {
-                items[i].innerHTML = changeValue;
-            } else {
-                items[i].style.color = changeValue;
+            else if (changeType == 'changeSize') {
+                changeItem.style.fontSize = changeValue + 'px';
             }
 
-        } else if (changeStyle == 'changeLineHeight') {
-
-            if (items[i].parentNode == outputContainer) {
-                items[i].innerHTML = changeValue + 'px';
-            } else {
-                items[i].style.lineHeight = changeValue + 'px';
+            else if (changeType == 'changeLineHeight') {
+                changeItem.style.lineHeight = changeValue + 'px';
             }
 
-        } else if (changeStyle == 'changeWeight') {
-
-            if (items[i].parentNode == outputContainer) {
-                items[i].innerHTML = changeValue;
-            } else {
-                items[i].style.fontWeight = changeValue;
+            else if (changeType == 'changeWeight') {
+                changeItem.style.fontWeight = changeValue;
             }
 
-        } else if (changeStyle == 'changeMargin') {
-
-            if (items[i].parentNode == outputContainer) {
-                items[i].innerHTML = changeValue + 'px';
-            } else {
-                items[i].style.margin = changeValue + 'px';
+            else if (changeType == 'changeMargin') {
+                changeItem.style.margin = changeValue + 'px';
             }
 
-        } else if (changeStyle == 'changeLetterSpacing') {
-
-            if (items[i].parentNode == outputContainer) {
-                items[i].innerHTML = changeValue + 'px';
-            } else {
-                items[i].style.letterSpacing = changeValue + 'px';
+            else if (changeType == 'changeLetterSpacing') {
+                changeItem.style.letterSpacing = changeValue + 'px';
             }
 
         }
+
     }
+
+    // if a list has been passed into changeClass process it here
+    if (Array.isArray(changeClass)) {
+
+        // change items to the imported list
+        var items = changeClass;
+
+        // find each element within the list
+        for (var i = 0; i < items.length; i++) {
+
+            // set the elememtItem - this is the specific element we'll be working with e.g. h1, h2, h3
+            var elementItem = document.getElementsByTagName(items[i]);
+
+            // loop through all instances of elementItem
+            for (var j = 0; j < elementItem.length; j++) {
+
+                updatedClass(elementItem[j], changeStyle);
+
+            }
+
+        }
+
+    // if a single class has been passed process it here
+    } else {
+        // apply the style for each instance of the class
+        for (var i = 0; i < items.length; i++) {
+            updatedClass(items[i], changeStyle);
+        }
+    }
+
 }
-
-    /*
-        1. changeStyle = the type of change being applied
-        2. changeID = the ID of the preview element
-        3. changeValue = the value returned from the input field
-    */
-
-    function updateStyle(changeStyle, changeID, changeValue) {
-        if (changeStyle == 'changeMultipleColors') {
-            for (i = 0; i < changeID.length; i++) {
-                document.getElementById(changeID[i]).style.color = changeValue;
-            }
-        }
-    }
 
 </script>
 
